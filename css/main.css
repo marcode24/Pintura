@@ -1,0 +1,610 @@
+/* General */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #000;
+    background: #ffffff;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+h1 {
+    font-size: 2.3em;
+    line-height: 1.3em;
+    margin: 15px 0;
+    font-weight: 300;
+}
+p {
+    margin: 0 0 1.5em 0;
+}
+img {
+    max-width: 9    0%;
+    height: auto;
+}
+.title {
+    font-size: 6rem;
+    color: #0b76a6;
+    text-align: center;
+    padding: 2.5rem;
+    font-family: 'Sofia', cursive;
+}
+.img-center {
+    display: block;
+    margin: auto;
+    border-radius: 1rem;
+}
+
+.center{
+    text-align: center;
+}
+
+.justify {
+    text-align: justify;
+}
+
+/* Content */
+#main-content {
+    background: #ffffff;
+    width: 100%;
+    max-width: 100rem;
+    margin: 20px auto;
+    /* box-shadow: 0 0 10px rgba(0,0,0,.1); */
+}
+#main-content header, #main-content .content {
+    padding: 7rem;
+}
+.article-content {
+    margin-top: 8rem;
+}
+
+
+/*---------------------------------------
+# Header - Section
+---------------------------------------*/
+#header {
+    transition: all 0.5s;
+    z-index: 999;
+    padding: 15px 0;
+    position: fixed;
+    height: 5rem;
+    width: 100%;
+}
+
+#header a#logo-header {
+    color: #fff;
+}
+
+#header.header-transparent {
+    background: transparent;
+}
+
+#header.header-scrolled {
+    padding: 0;
+    background: #00D893;
+}
+
+#header a {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+#logo-header {
+    float: left;
+    padding: 15px 0 0 20px;
+    text-decoration: none;
+}
+#logo-header:hover {
+    cursor: default;
+}
+#logo-header .site-name {
+    display: block;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+#logo-header .site-description {
+    display: block;
+    font-weight: 300;
+    font-size: 0.8em;
+}
+
+@media (max-width: 768px) {
+    #header.header-scrolled {
+      padding: 15px 0;
+    }
+  }
+
+/* Lists */
+ul li span {
+    font-weight: bold;
+}
+ol li span {
+    font-weight: bold;
+}
+
+tbody tr td {
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5em;
+}
+tfoot tr td {
+    text-align: center;
+    padding: 0.2em;
+}
+
+/* Navbar */
+nav {
+    float: right;
+}
+nav ul {
+    padding: 0;
+    list-style: none;
+    padding-right: 20px;
+}
+nav ul li {
+    display: inline-block;
+    line-height: 3rem;
+}
+nav ul li a {
+    display: block;
+    padding: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 0.8rem;
+}
+nav ul li a:hover {
+    background: #00B4A5;
+}
+
+nav ul li ul {
+    display: none;
+    position:absolute;
+}
+
+nav ul li:hover > ul {
+    display: block;
+    inline-size: min-content;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgb(127 137 161 / 25%);
+    transition: ease all 0.3s;
+    border-radius: 0.8rem;
+    padding: 0 0 0 0;
+}
+
+nav ul li ul li{
+    position:relative;
+    align-items: center;
+}
+
+nav ul li ul li a.sub-item {
+    color: #000;
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 0.2rem solid #000;
+}
+
+table thead tr th.table-title {
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+table caption {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+table tbody tr td {
+    font-size: 1.2rem;
+}
+
+table tfoot {
+    font-size: 1.5rem;
+}
+
+table tfoot tr td {
+    padding: 1rem;
+}
+
+
+.table-image {
+    display: block;
+    margin: auto;
+    border-radius: 2rem;
+    padding: 1rem;
+    width: 16rem;
+    height: 11rem;
+}
+
+/* Video */
+.video {
+    display: block;
+    margin: auto;
+    width: 40rem;
+    height: 22.5rem;
+    border-radius: 1rem;
+}
+.video:focus{
+    outline: none;
+}
+
+
+/* Main page */
+#main-pintura {
+    height: 100vh;
+    background-image: linear-gradient(to right top, #2f4858, #00738c, #00a2a5, #00cf99, #25f96a);
+}
+
+#main-pintura .pintura-container{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#main-pintura .pintura-container .pintura-title{
+    font-size: 8rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 2.5rem;
+    font-family: 'Sofia', cursive;
+}
+
+section {
+    padding: 3rem 13rem 3rem 13rem;
+    position: relative;
+}
+
+section h2.center {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+section.bg{
+    background: url("https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") top center ;
+    background-size: cover;
+}
+
+section .container .flex-item img{
+    width: 40%;
+    height: auto;
+    float: right;
+    border-radius: 0.8rem;
+    margin: 0.8rem 0 0 1rem;
+}
+
+section .container .flex-item p {
+    text-align: justify;
+}
+
+.encaustica .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.encaustica .container .flex-item{
+    width: 100%;
+    height: auto;
+    color: #000;
+    text-align: justify;
+    margin: 0.5rem;
+    padding: 0 1rem 0 1rem;
+    background-color: transparent;
+    border-radius: 0.8rem;
+}
+
+/* Oleo */
+#main-oleo{
+    height: 30rem;
+    background: linear-gradient(rgba(2, 0, 9, 0.95), rgba(91, 94, 44, 0.7)),  url("https://mott.pe/noticias/wp-content/uploads/2018/11/conoce-un-poco-mas-de-las-tecnicas-para-pintar-al-oleo-para-principiantes.png") top center;
+    background-size: cover;
+    position: relative;
+}
+
+#main-oleo .oleo-container{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.oleo {
+    padding: 3rem 5rem 3rem 5rem;
+    position: relative;
+}
+
+.oleo-title{
+    font-size: 6rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 2.5rem;
+    font-family: 'Sofia', cursive;
+}
+
+.oleo-features {
+    padding: 3rem 5rem 3rem 5rem;
+    position: relative;
+    background: url("https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") top center ;
+    background-size: cover;
+}
+
+.oleo-features .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.oleo-features .container .flex-item{
+    width: 30%;
+    height: auto;
+    color: #FFF;
+    text-align: justify;
+    margin: 0.5rem;
+    padding: 0 1rem 0 1rem;
+    background-color: #ff991b;
+    border-radius: 0.8rem;
+}
+
+.oleo-advices {
+    padding: 3rem 5rem 3rem 5rem;
+    position: relative;
+}
+
+.oleo-advices .container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.oleo-advices .container .flex-item{
+    width: 47%;
+    height: auto;
+    color: #000;
+    text-align: justify;
+    margin: 0.3rem;
+    padding: 0 1rem 0 1rem;
+}
+
+.oleo-tricks {
+    padding: 3rem 5rem 3rem 5rem;
+    position: relative;
+    background: url("https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") top center ;
+    background-size: cover;
+    position: relative;
+}
+
+.oleo-tricks .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.oleo-tricks .container .flex-item{
+    width: 30%;
+    height: auto;
+    color: #FFF;
+    text-align: justify;
+    margin: 0.5rem;
+    padding: 0 1rem 0 1rem;
+    background-color: #fd2f22;
+    border-radius: 0.8rem;
+}
+
+/* Encaustica */
+
+#main-encaustica{
+    height: 30rem;
+    background: linear-gradient(rgba(2, 0, 9, 0.95), rgba(91, 94, 44, 0.7)),  url("https://angeladearte.files.wordpress.com/2016/06/fe2e27_f9ac99b6f7fe454cbd77bf28fd038e91-mv2.jpg?w=440") top center;
+    background-size: cover;
+    position: relative;
+}
+
+#main-encaustica .encaustica-container{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.encaustica-title{
+    font-size: 6rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 2.5rem;
+    font-family: 'Sofia', cursive;
+}
+
+.encaustica{
+    padding: 3rem 15rem 3rem 15rem;
+    position: relative;
+}
+
+.encaustica .container .flex-item img{
+    width: 40%;
+    height: 19rem;
+    float: left;
+    border-radius: 0.8rem;
+    margin: 0.8rem 0 0 1rem;
+}
+
+.encaustica .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.encaustica .container .flex-item{
+    width: 100%;
+    height: auto;
+    color: #000;
+    text-align: justify;
+    margin: 0.5rem;
+    padding: 0 1rem 0 1rem;
+    background-color: transparent;
+    border-radius: 0.8rem;
+}
+
+.encaustica-types {
+    padding: 3rem 5rem 3rem 5rem;
+    position: relative;
+    background: url("https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") top center ;
+    background-size: cover;
+}
+
+.encaustica-types .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.encaustica-types .container .card{
+    width: 30%;
+    height: auto;
+    color: #000;
+    text-align: justify;
+    margin: 0.5rem;
+    justify-content: center;
+    transform: translate(-10%,-10%);
+    background:transparent;
+}
+
+.container .card {
+    overflow: hidden;
+    border-radius: 0.8rem;
+    box-shadow: 0 1px 0 1px rgba(2, 0, 9, 0.60);
+    position: relative;
+}
+
+.container .card-body .card-title {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.container .card .card-body img{
+    max-width: 100%;
+    max-height: 100%;
+    width: 30rem;
+    height: 20rem;
+    border-radius: 0.8rem 0.8rem 0 0;
+    -webkit-transform:scale(1);
+    transform:scale(1);
+    transition: all 0.9s ease-in-out;
+}
+
+.container .card .card-body p.info {
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    color: #fff;
+    transform: translate(-50%, -50%);
+}
+
+.container .card:hover .card-body p.info{
+    display: block;
+    color: #000;
+    font-weight: 100;
+    transition: all 0.9s ease-in-out;
+}
+
+.container .card:hover .card-body img {
+    filter: blur(2px);
+    -webkit-transform:scale(1.05);
+    transform:scale(1.05);
+    transition: all 0.9s ease-in-out;
+}
+
+
+.encaustica-material{
+    padding: 3rem 5rem 3rem 5rem;
+    position: relative;
+}
+
+.encaustica-material .container .flex-item img{
+    width: 40%;
+    height: 19rem;
+    float: right;
+    border-radius: 0.8rem;
+    margin: 0.8rem 0 0 1rem;
+}
+
+.encaustica-material .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.encaustica-material .container .flex-item{
+    width: 100%;
+    height: auto;
+    color: #000;
+    text-align: justify;
+    margin: 0.5rem;
+    padding: 0 1rem 0 1rem;
+    background-color: transparent;
+    border-radius: 0.8rem;
+}
+
+.encaustica-tools {
+    padding: 3rem 5rem 3rem 5rem;
+    position: relative;
+    background: url("https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") top center ;
+    background-size: cover;
+    position: relative;
+}
+
+.encaustica-tools .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.encaustica-tools .container .flex-item{
+    width: 30%;
+    height: auto;
+    color: #FFF;
+    text-align: justify;
+    margin: 0.5rem;
+    padding: 0 1rem 0 1rem;
+    background-color: #fd2f22;
+    border-radius: 0.8rem;
+}
+
+
+
+
+
