@@ -1,66 +1,277 @@
-/* General */
+* {
+    box-sizing: border-box;
+}
 body {
+    font-family: Arial;
     margin: 0;
-    padding: 0;
-    font-family: Helvetica, Arial, sans-serif;
-    color: #000;
-    background: #ffffff;
-    font-size: 1em;
-    line-height: 1.5em;
-}
-h1 {
-    font-size: 2.3em;
-    line-height: 1.3em;
-    margin: 15px 0;
-    font-weight: 300;
-}
-p {
-    margin: 0 0 1.5em 0;
 }
 img {
-    max-width: 9    0%;
+    max-width: 100%;
     height: auto;
+    border-radius: 0.8rem;
+
 }
-.title {
-    font-size: 6rem;
-    color: #0b76a6;
+section {
+    padding: 1rem;
+    position: relative;
+    /* border: solid #000; */
+}
+section.bg{
+    background: url("https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") top center ;
+    background-size: cover;
+}
+.text-center {
     text-align: center;
-    padding: 2.5rem;
-    font-family: 'Sofia', cursive;
 }
-.img-center {
+.center {
     display: block;
     margin: auto;
-    border-radius: 1rem;
+    max-width: 50%;
 }
-
-.center{
-    text-align: center;
-}
-
-.justify {
+.text-justify {
     text-align: justify;
 }
+.text-white {
+    color: #fff;
+}
+.bg-color1 {
+    background-color: #00B4A5;
+}
+.bg-color2 {
+    background-color: #008F9F;
+}
+/* ----------------------------------------
+ # Flex - design
+---------------------------------------- */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 7rem 0 7rem;
+}
+.main {
+    flex: 65%;
+    background-color: white;
+    padding: 20px;
+}
+aside {
+    flex: 35%;
+    background-color: #f1f1f1;
+    padding: 20px;
+    height: 100%;
+}
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+.container {
+    padding: 1rem;
+}
+.container.size-1 {
+    flex: 25%;
+}
+.container.size-2 {
+    flex: 50%
+}
+.container.size-3 {
+    flex: 75%
+}
+.container.size-4{
+    flex: 100%
+}
+@media screen and (max-width: 800px) {
+    .content {
+      flex-direction: column;
+    }
+}
 
-/* Content */
-#main-content {
-    background: #ffffff;
+/* ----------------------------------------
+# Lists - design
+---------------------------------------- */
+li span {
+    font-weight: bold;
+    text-transform:uppercase;
+}
+ol li span {
+    font-weight: bold;
+}
+
+/* ----------------------------------------
+# Table - design
+---------------------------------------- */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
     width: 100%;
-    max-width: 100rem;
-    margin: 20px auto;
-    /* box-shadow: 0 0 10px rgba(0,0,0,.1); */
 }
-#main-content header, #main-content .content {
-    padding: 7rem;
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 0.2rem solid #000;
 }
-.article-content {
-    margin-top: 8rem;
+table thead tr th.table-title {
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+table caption {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+table tbody tr td {
+    font-size: 1.2rem;
+}
+table tfoot {
+    font-size: 1.5rem;
+}
+table tfoot tr td {
+    padding: 1rem;
+}
+table tbody tr td {
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5em;
+}
+table tfoot tr td {
+    text-align: center;
+    padding: 0.2em;
+}
+.table-image {
+    display: block;
+    margin: auto;
+    border-radius: 2rem;
+    padding: 1rem;
+    width: 16rem;
+    height: 11rem;
 }
 
+/* ----------------------------------------
+# Card 1 - design
+---------------------------------------- */
+.cards-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.card {
+    margin: 0.5rem;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.1), -5px -5px 30px 7px rgba(0,0,0,0.1);
+}
+.card .card-image {
+    width: inherit;
+    height: inherit;
+    border-radius: 0.8rem;
+}
+.card .card-image img {
+    width: inherit;
+    height: inherit;
+    border-radius: 0.8rem;
+    object-fit: cover;
+}
+.card .card-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: -5rem;
+    height: 40px;
+}
+.card:hover {
+    transform: scale(1.05, 1.05);
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.15), -5px -5px 30px 15px rgba(0,0,0,0.15);
+}
 
-/*---------------------------------------
-# Header - Section
----------------------------------------*/
+/* ----------------------------------------
+# Card 2 - design
+---------------------------------------- */
+.card2 {
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.1), -5px -5px 30px 7px rgba(0,0,0,0.1);
+    padding: 1rem;
+}
+.card2 .card-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+.card2 .card-description {
+    font-weight: bold;
+    font-size: 1rem;
+}
+.card2:hover {
+    transform: scale(1.05, 1.05);
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.15), -5px -5px 30px 15px rgba(0,0,0,0.15);
+}
+.card2 ul {
+    padding-right: 1.5rem;
+}
+
+/* ----------------------------------------
+# Card 3 - design
+---------------------------------------- */
+.card3 {
+    margin: 1.5rem;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.1), -5px -5px 30px 7px rgba(0,0,0,0.1);
+}
+.card3 .card-image {
+    width: inherit;
+    height: inherit;
+    border-radius: 0.8rem;
+}
+.card3 .card-image img {
+    width: inherit;
+    height: inherit;
+    border-radius: 0.8rem;
+    object-fit: cover;
+}
+.card3 .card-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: -10rem;
+    height: 40px;
+    text-shadow: 0rem 0rem 1rem black, 0 0 1rem black, 0 0 1rem black;
+
+}
+.card3 .card-description {
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: 50px;
+    height: 1rem;
+    display: none;
+    text-shadow: 0rem 0rem 1rem black, 0 0 1rem black, 0 0 1rem black;
+    padding: 1rem;
+}
+.card3:hover {
+    transform: scale(1.05, 1.05);
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+        -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+.card3:hover .card-description {
+    display: block;
+}
+.card3:hover .card-title {
+    margin-top: -21rem;
+    transition: 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+/* ----------------------------------------
+# Header
+---------------------------------------- */
 #header {
     transition: all 0.5s;
     z-index: 999;
@@ -69,20 +280,16 @@ img {
     height: 5rem;
     width: 100%;
 }
-
 #header a#logo-header {
     color: #fff;
 }
-
 #header.header-transparent {
     background: transparent;
 }
-
 #header.header-scrolled {
     padding: 0;
     background: #00D893;
 }
-
 #header a {
     font-size: 1.3rem;
     font-weight: 600;
@@ -105,32 +312,15 @@ img {
     font-weight: 300;
     font-size: 0.8em;
 }
-
 @media (max-width: 768px) {
     #header.header-scrolled {
       padding: 15px 0;
     }
-  }
-
-/* Lists */
-ul li span {
-    font-weight: bold;
-}
-ol li span {
-    font-weight: bold;
 }
 
-tbody tr td {
-    font-weight: bold;
-    text-align: center;
-    padding: 0.5em;
-}
-tfoot tr td {
-    text-align: center;
-    padding: 0.2em;
-}
-
-/* Navbar */
+/* ----------------------------------------
+# Navbar
+---------------------------------------- */
 nav {
     float: right;
 }
@@ -153,12 +343,10 @@ nav ul li a {
 nav ul li a:hover {
     background: #00B4A5;
 }
-
 nav ul li ul {
     display: none;
     position:absolute;
 }
-
 nav ul li:hover > ul {
     display: block;
     inline-size: min-content;
@@ -168,443 +356,102 @@ nav ul li:hover > ul {
     border-radius: 0.8rem;
     padding: 0 0 0 0;
 }
-
 nav ul li ul li{
     position:relative;
     align-items: center;
 }
-
 nav ul li ul li a.sub-item {
     color: #000;
 }
 
-/* Tables */
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-}
-
-th, td {
-    text-align: left;
-    padding: 8px;
-    border: 0.2rem solid #000;
-}
-
-table thead tr th.table-title {
-    font-size: 1.5rem;
-    padding: 1rem;
+/* ----------------------------------------
+# Main page
+---------------------------------------- */
+section .page-container{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
 }
-
-table caption {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+section .page-container .page-title{
+    font-size: 7rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 2.5rem;
+    font-family: 'Sofia', cursive;
 }
 
-table tbody tr td {
-    font-size: 1.2rem;
-}
-
-table tfoot {
-    font-size: 1.5rem;
-}
-
-table tfoot tr td {
-    padding: 1rem;
-}
-
-
-.table-image {
-    display: block;
-    margin: auto;
-    border-radius: 2rem;
-    padding: 1rem;
-    width: 16rem;
-    height: 11rem;
-}
-
-/* Video */
-.video {
-    display: block;
-    margin: auto;
-    width: 40rem;
-    height: 22.5rem;
-    border-radius: 1rem;
-}
-.video:focus{
-    outline: none;
-}
-
-
-/* Main page */
+/* ----------------------------------------
+# Pintura - page
+---------------------------------------- */
 #main-pintura {
     height: 100vh;
     background-image: linear-gradient(to right top, #2f4858, #00738c, #00a2a5, #00cf99, #25f96a);
 }
 
-#main-pintura .pintura-container{
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-#main-pintura .pintura-container .pintura-title{
-    font-size: 8rem;
-    color: #ffffff;
-    text-align: center;
-    padding: 2.5rem;
-    font-family: 'Sofia', cursive;
-}
-
-section {
-    padding: 3rem 13rem 3rem 13rem;
-    position: relative;
-}
-
-section h2.center {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-section.bg{
-    background: url("https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") top center ;
-    background-size: cover;
-}
-
-section .container .flex-item img{
-    width: 40%;
-    height: auto;
-    float: right;
-    border-radius: 0.8rem;
-    margin: 0.8rem 0 0 1rem;
-}
-
-section .container .flex-item p {
-    text-align: justify;
-}
-
-.encaustica .container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-}
-
-.encaustica .container .flex-item{
-    width: 100%;
-    height: auto;
-    color: #000;
-    text-align: justify;
-    margin: 0.5rem;
-    padding: 0 1rem 0 1rem;
-    background-color: transparent;
-    border-radius: 0.8rem;
-}
-
-/* Oleo */
+/* ----------------------------------------
+# Oleo - page
+---------------------------------------- */
 #main-oleo{
     height: 30rem;
-    background: linear-gradient(rgba(2, 0, 9, 0.95), rgba(91, 94, 44, 0.7)),  url("https://mott.pe/noticias/wp-content/uploads/2018/11/conoce-un-poco-mas-de-las-tecnicas-para-pintar-al-oleo-para-principiantes.png") top center;
+    background: linear-gradient(rgba(2, 0, 9, 0.95), rgba(91, 94, 44, 0.7)), url("https://mott.pe/noticias/wp-content/uploads/2018/11/conoce-un-poco-mas-de-las-tecnicas-para-pintar-al-oleo-para-principiantes.png") center;
     background-size: cover;
     position: relative;
 }
 
-#main-oleo .oleo-container{
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-.oleo {
-    padding: 3rem 5rem 3rem 5rem;
-    position: relative;
-}
-
-.oleo-title{
-    font-size: 6rem;
-    color: #ffffff;
-    text-align: center;
-    padding: 2.5rem;
-    font-family: 'Sofia', cursive;
-}
-
-.oleo-features {
-    padding: 3rem 5rem 3rem 5rem;
-    position: relative;
-    background: url("https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") top center ;
-    background-size: cover;
-}
-
-.oleo-features .container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-}
-
-.oleo-features .container .flex-item{
-    width: 30%;
-    height: auto;
-    color: #FFF;
-    text-align: justify;
-    margin: 0.5rem;
-    padding: 0 1rem 0 1rem;
-    background-color: #ff991b;
-    border-radius: 0.8rem;
-}
-
-.oleo-advices {
-    padding: 3rem 5rem 3rem 5rem;
-    position: relative;
-}
-
-.oleo-advices .container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.oleo-advices .container .flex-item{
-    width: 47%;
-    height: auto;
-    color: #000;
-    text-align: justify;
-    margin: 0.3rem;
-    padding: 0 1rem 0 1rem;
-}
-
-.oleo-tricks {
-    padding: 3rem 5rem 3rem 5rem;
-    position: relative;
-    background: url("https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") top center ;
-    background-size: cover;
-    position: relative;
-}
-
-.oleo-tricks .container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-}
-
-.oleo-tricks .container .flex-item{
-    width: 30%;
-    height: auto;
-    color: #FFF;
-    text-align: justify;
-    margin: 0.5rem;
-    padding: 0 1rem 0 1rem;
-    background-color: #fd2f22;
-    border-radius: 0.8rem;
-}
-
-/* Encaustica */
-
+/* ----------------------------------------
+# Encaustica - page
+---------------------------------------- */
 #main-encaustica{
     height: 30rem;
-    background: linear-gradient(rgba(2, 0, 9, 0.95), rgba(91, 94, 44, 0.7)),  url("https://angeladearte.files.wordpress.com/2016/06/fe2e27_f9ac99b6f7fe454cbd77bf28fd038e91-mv2.jpg?w=440") top center;
+    background: linear-gradient(rgba(2, 0, 9, 0.95), rgba(91, 94, 44, 0.7)), url("https://angeladearte.files.wordpress.com/2016/06/fe2e27_f9ac99b6f7fe454cbd77bf28fd038e91-mv2.jpg?w=440") center;
     background-size: cover;
     position: relative;
 }
 
-#main-encaustica .encaustica-container{
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-.encaustica-title{
-    font-size: 6rem;
-    color: #ffffff;
-    text-align: center;
-    padding: 2.5rem;
-    font-family: 'Sofia', cursive;
-}
-
-.encaustica{
-    padding: 3rem 15rem 3rem 15rem;
-    position: relative;
-}
-
-.encaustica .container .flex-item img{
-    width: 40%;
-    height: 19rem;
-    float: left;
-    border-radius: 0.8rem;
-    margin: 0.8rem 0 0 1rem;
-}
-
-.encaustica .container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-}
-
-.encaustica .container .flex-item{
-    width: 100%;
-    height: auto;
-    color: #000;
-    text-align: justify;
-    margin: 0.5rem;
-    padding: 0 1rem 0 1rem;
-    background-color: transparent;
-    border-radius: 0.8rem;
-}
-
-.encaustica-types {
-    padding: 3rem 5rem 3rem 5rem;
-    position: relative;
-    background: url("https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") top center ;
-    background-size: cover;
-}
-
-.encaustica-types .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-}
-
-.encaustica-types .container .card{
-    width: 30%;
-    height: auto;
-    color: #000;
-    text-align: justify;
-    margin: 0.5rem;
-    justify-content: center;
-    transform: translate(-10%,-10%);
-    background:transparent;
-}
-
-.container .card {
-    overflow: hidden;
-    border-radius: 0.8rem;
-    box-shadow: 0 1px 0 1px rgba(2, 0, 9, 0.60);
-    position: relative;
-}
-
-.container .card-body .card-title {
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.container .card .card-body img{
-    max-width: 100%;
-    max-height: 100%;
-    width: 30rem;
-    height: 20rem;
-    border-radius: 0.8rem 0.8rem 0 0;
-    -webkit-transform:scale(1);
-    transform:scale(1);
-    transition: all 0.9s ease-in-out;
-}
-
-.container .card .card-body p.info {
-    display: none;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    color: #fff;
-    transform: translate(-50%, -50%);
-}
-
-.container .card:hover .card-body p.info{
-    display: block;
-    color: #000;
-    font-weight: 100;
-    transition: all 0.9s ease-in-out;
-}
-
-.container .card:hover .card-body img {
-    filter: blur(2px);
-    -webkit-transform:scale(1.05);
-    transform:scale(1.05);
-    transition: all 0.9s ease-in-out;
-}
-
-
-.encaustica-material{
-    padding: 3rem 5rem 3rem 5rem;
-    position: relative;
-}
-
-.encaustica-material .container .flex-item img{
-    width: 40%;
-    height: 19rem;
-    float: right;
-    border-radius: 0.8rem;
-    margin: 0.8rem 0 0 1rem;
-}
-
-.encaustica-material .container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-}
-
-.encaustica-material .container .flex-item{
-    width: 100%;
-    height: auto;
-    color: #000;
-    text-align: justify;
-    margin: 0.5rem;
-    padding: 0 1rem 0 1rem;
-    background-color: transparent;
-    border-radius: 0.8rem;
-}
-
-.encaustica-tools {
-    padding: 3rem 5rem 3rem 5rem;
-    position: relative;
-    background: url("https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") top center ;
+/* ----------------------------------------
+# Acuarela - page
+---------------------------------------- */
+#main-encaustica{
+    height: 30rem;
+    background: linear-gradient(rgba(2, 0, 9, 0.95), rgba(91, 94, 44, 0.7)), url("https://mott.pe/noticias/wp-content/uploads/2018/01/Portada.jpg") center;
     background-size: cover;
     position: relative;
 }
 
-.encaustica-tools .container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
+/* ----------------------------------------
+# Tempera - page
+---------------------------------------- */
+#main-tempera{
+    height: 30rem;
+    background: linear-gradient(rgba(2, 0, 9, 0.95), rgba(91, 94, 44, 0.7)), url("https://i.ytimg.com/vi/SoMcSCdPdZE/maxresdefault.jpg") top;
+    background-size: cover;
+    position: relative;
 }
 
-.encaustica-tools .container .flex-item{
-    width: 30%;
-    height: auto;
-    color: #FFF;
-    text-align: justify;
-    margin: 0.5rem;
-    padding: 0 1rem 0 1rem;
-    background-color: #fd2f22;
-    border-radius: 0.8rem;
+/* ----------------------------------------
+# Acrilico - page
+---------------------------------------- */
+#main-acrilico{
+    height: 30rem;
+    background: linear-gradient(rgba(2, 0, 9, 0.95), rgba(91, 94, 44, 0.7)), url("https://mymodernmet.com/wp/wp-content/uploads/2019/01/acrylic-painting-techniques-1.jpg") center;
+    background-size: cover;
+    position: relative;
 }
 
-
-
-
+/* ----------------------------------------
+# Pastel - page
+---------------------------------------- */
+#main-pastel{
+    height: 30rem;
+    background: linear-gradient(rgba(2, 0, 9, 0.95), rgba(91, 94, 44, 0.7)), url("https://i.pinimg.com/564x/e2/54/24/e25424b4b77ef111c39c2034182093f6.jpg") center ;
+    background-size: cover;
+    position: relative;
+}
 
