@@ -58,7 +58,18 @@ a.btn-primary:hover{
 .rounded {
     border-radius: 0.8rem;
 }
-
+h2 {
+    font-size: 2rem;
+}
+h5 {
+    font-size: 1.5rem;
+}
+h6 {
+    font-size: 1.35rem;
+}
+p {
+    font-size: 1.3rem;
+}
 /* ----------------------------------------
 # Indice - design
 ---------------------------------------- */
@@ -257,6 +268,9 @@ table tfoot tr td {
 .card:hover .card-button {
     display: block;
 }
+.card .card-title p {
+    font-size: 1.8rem;
+}
 
 /* ----------------------------------------
 # Card 2 - design
@@ -291,7 +305,7 @@ table tfoot tr td {
 .card3 {
     margin: 1.5rem;
     width: 20rem;
-    height: 20rem;
+    height: 22rem;
     border-radius: 0.8rem;
     cursor: pointer;
     transition: 0.4s;
@@ -322,12 +336,14 @@ table tfoot tr td {
     border-radius: 0px 0px 40px 40px;
     font-family: sans-serif;
     font-weight: bold;
-    font-size: 0.9rem;
     margin-top: 50px;
     height: 1rem;
     display: none;
     text-shadow: 0rem 0rem 1rem black, 0 0 1rem black, 0 0 1rem black;
     padding: 1rem;
+}
+.card3 .card-description p {
+    font-size: 1rem;
 }
 .card3:hover {
     transform: scale(1.05, 1.05);
@@ -357,10 +373,6 @@ table tfoot tr td {
     overflow: hidden;
     z-index: 0;
 }
-.card4 p {
-    position: relative;
-    margin: 1rem 0 0;
-}
 .card4:hover .image {
     transform: scale(1.2) rotate(3deg);
     opacity: 1;
@@ -387,17 +399,28 @@ table tfoot tr td {
     position: relative;
     z-index: 1;
 }
-.card4 .card-description h1 {
+.card4 .card-description h2 {
     line-height: 1;
     margin: 0;
     font-size: 1.7rem;
+    text-align: justify;
 }
-.card4 .card-description h2 {
-    font-size: 1rem;
+.card4 .card-description h3 {
+    font-size: 1.2rem;
     font-weight: 300;
     text-transform: uppercase;
     color: #a2a2a2;
     margin-top: 5px;
+}
+.card4 .card-description p {
+    position: relative;
+    margin: 1rem 0 0;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.card4 .card-description h2::first-line {
+    background-color: #00D893;
 }
 
 /* ----------------------------------------
@@ -406,7 +429,7 @@ table tfoot tr td {
 #header {
     transition: all 0.5s;
     z-index: 999;
-    padding: 15px 0;
+    padding: 1rem 2rem;
     position: fixed;
     height: 5rem;
     width: 100%;
@@ -418,8 +441,9 @@ table tfoot tr td {
     background: transparent;
 }
 #header.header-scrolled {
-    padding: 0;
+    padding: 0 8rem;
     background: #00D893;
+    box-shadow: 0 0 0.8rem 0 #000;
 }
 #header a {
     font-size: 1.3rem;
@@ -469,30 +493,38 @@ nav ul li a {
     padding: 0 10px;
     text-decoration: none;
     color: #fff;
-    border-radius: 0.8rem;
+    border-radius: 0.5em;
 }
 nav ul li a:hover {
     background: #00B4A5;
 }
-nav ul li ul {
+
+/* ----------------------------------------
+# Dropdown
+---------------------------------------- */
+.dropdown {
+    position: relative;
+}
+.dropdown-content {
     display: none;
-    position:absolute;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 7rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    z-index: 1;
+    border-radius: 0.6rem;
 }
-nav ul li:hover > ul {
+.dropdown-content a {
+    color: black;
+    padding: 0 1.4rem;
+    text-decoration: none;
     display: block;
-    inline-size: min-content;
-    background: #fff;
-    box-shadow: 0px 0px 30px rgb(127 137 161 / 25%);
-    transition: ease all 0.3s;
-    border-radius: 0.8rem;
-    padding: 0 0 0 0;
 }
-nav ul li ul li{
-    position:relative;
-    align-items: center;
+.dropdown-content a:hover {
+    background: #00B4A5;
 }
-nav ul li ul li a.sub-item {
-    color: #000;
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* ----------------------------------------
@@ -510,8 +542,8 @@ section .page-container{
     flex-direction: column;
     text-align: center;
 }
-section .page-container .page-title{
-    font-size: 7rem;
+section .page-container h1.page-title{
+    font-size: 8rem;
     color: #ffffff;
     text-align: center;
     padding: 2.5rem;
