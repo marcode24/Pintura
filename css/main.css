@@ -1,6 +1,15 @@
 * {
     box-sizing: border-box;
 }
+*:target {
+    background: yellow;
+}
+:root{
+    --greenColor1: #25F96A;
+    --greenColor2: #00D893;
+    --blueColor1: #00B4A5;
+    --blueColor2: #008F9F;
+}
 body {
     font-family: Arial;
     margin: 0;
@@ -17,6 +26,10 @@ section[class~="bg"]{
     background: url("https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") top center ;
     background-size: cover;
 }
+section .content .container p::first-letter {
+    color: red;
+    font-size: 150%;
+}
 a.btn-primary {
     text-decoration: none;
     padding: 10px;
@@ -29,9 +42,27 @@ a.btn-primary {
     border: 0px;
     margin-top: 0.1rem;
 }
+input[class='btn-success'] {
+    text-decoration: none;
+    width: 100%;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    background-color: rgba(6, 180, 0, 0.7);
+    border-radius: 0.8rem;
+    box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 10%);
+    border: 0px;
+    margin-top: 0.1rem;
+}
 a.btn-primary:hover{
     color: rgb(0, 0, 0, 0.7);
     background-color: rgb(0, 180, 165);
+    cursor: pointer;
+}
+input[class='btn-success']:hover {
+    color: rgb(0, 0, 0, 0.7);
+    background-color: rgb(6, 180, 0);
     cursor: pointer;
 }
 .text-center {
@@ -48,16 +79,22 @@ a.btn-primary:hover{
 .text-white {
     color: #fff;
 }
-.bg-color1 {
-    background-color: #00B4A5;
+div.bg-color1 {
+    background-color: #00B4A5
 }
-.bg-color2 {
-    background-color: #008F9F;
+div.bg-color2 {
+    background-color: var(--blueColor2);
+}
+th[class*='color1']{
+    background-color: var(--blueColor1);
+}
+th[class*='color2'] {
+    background-color: var(--blueColor2);
 }
 .rounded {
     border-radius: 0.8rem;
 }
-h2 {
+h2{
     font-size: 2rem;
 }
 h5 {
@@ -69,6 +106,18 @@ h6 {
 p {
     font-size: 1.2rem;
 }
+p:nth-of-type(n+2) {
+    font-weight: bold;
+}
+a:link {
+    font-size: 1.5rem;
+}
+a[href^="http"]:visited {
+    color:red;
+}
+a[href^="http"]:active {
+    background: yellow;
+}
 /* ----------------------------------------
 # Indice - design
 ---------------------------------------- */
@@ -78,27 +127,32 @@ section.indice ul {
 section.indice ul li {
     margin: 0.8rem;
 }
-section.indice ul li a {
-    font-size: 1.5rem;
+section.indice ul > li:first-child a {
+    color: green;
+    font-weight: bold;
+}
+section.indice ul > li:last-child a {
+    color: blueviolet;
+    font-weight: bold;
 }
 section.indice ul li a:hover {
     color: #ff0000;
 }
-section.indice h2 {
+section.indice > h2 {
     margin: 0;
 }
 
 /* ----------------------------------------
 # Indice More - design
 ---------------------------------------- */
-section.more h2 {
+section.more > h2 {
     margin: 0;
 }
 
 /* ----------------------------------------
 # Indice Novelties - design
 ---------------------------------------- */
-section.novelties h2{
+section.novelties > h2{
     margin: 0;
 }
 
@@ -156,10 +210,24 @@ li span {
     font-weight: bold;
     text-transform:uppercase;
 }
-ol li span {
+ol li:nth-last-of-type(2n+1) {
+    color: green;
     font-weight: bold;
 }
-
+ol li ul li:only-child {
+    background: #f9f9f9;
+}
+ol li ul li a[href$='.html']:last-of-type {
+    background: red;
+}
+ol li ul li div {
+    background: pink;
+    height: 1.3rem;
+    width: 8rem;
+}
+ol li ul li div:empty {
+    background: teal;
+}
 /* ----------------------------------------
 # Table - design
 ---------------------------------------- */
@@ -168,20 +236,30 @@ table {
     border-spacing: 0;
     width: 100%;
 }
+table caption {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
 th, td {
     border: 0.2rem solid #000;
 }
-table thead tr th.table-title {
+table thead tr th[class] {
     font-size: 1.5rem;
     padding: 1rem;
     text-align: center;
     width: 1rem;
     color: #fff;
 }
-table caption {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+table tbody tr:nth-child(2n+1) {
+    color: green;
 }
+table tbody tr:nth-last-child(-n+1){
+    color: #fff;
+}
+table tbody tr:last-of-type {
+    background: coral;
+}
+
 table tbody tr td {
     font-size: 1.2rem;
     text-align: center;
@@ -204,7 +282,7 @@ table tfoot tr td {
 /* ----------------------------------------
 # Card 1 - design
 ---------------------------------------- */
-.cards-list {
+div[class|='cards'] {
     z-index: 0;
     width: 100%;
     display: flex;
@@ -338,7 +416,7 @@ table tfoot tr td {
 }
 .card3:hover {
     transform: scale(1.05, 1.05);
-    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
         -5px -5px 30px 15px rgba(0,0,0,0.22);
 }
 .card3:hover .card-description {
@@ -411,7 +489,7 @@ table tfoot tr td {
 }
 
 .card4 .card-description h2::first-line {
-    background-color: #00D893;
+    background-color: var(--greenColor2);
 }
 
 /* ----------------------------------------
@@ -425,7 +503,7 @@ table tfoot tr td {
     height: 5rem;
     width: 100%;
 }
-#header a#logo-header {
+#header a[id^='logo'] {
     color: #fff;
 }
 #header.header-transparent {
@@ -433,7 +511,7 @@ table tfoot tr td {
 }
 #header.header-scrolled {
     padding: 0 8rem;
-    background: #00D893;
+    background: var(--greenColor2);
     box-shadow: 0 0 0.8rem 0 #000;
 }
 #header a {
@@ -487,7 +565,7 @@ nav ul li a {
     border-radius: 0.5em;
 }
 nav ul li a:hover {
-    background: #00B4A5;
+    background: var(--blueColor1);
 }
 
 /* ----------------------------------------
@@ -512,7 +590,7 @@ nav ul li a:hover {
     display: block;
 }
 .dropdown-content a:hover {
-    background: #00B4A5;
+    background: var(--blueColor1);
 }
 .dropdown:hover .dropdown-content {
     display: block;
@@ -562,7 +640,10 @@ section.techniques ul li::marker {
 ---------------------------------------- */
 #main-pintura {
     height: 100vh;
-    background-image: linear-gradient(to right top, #2f4858, #00738c, #00a2a5, #00cf99, #25f96a);
+    background: linear-gradient(rgba(2, 0, 9, 0.55), rgba(2, 0, 9, 0.55)), url("https://images.unsplash.com/photo-1580089056071-11f31b94fefe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=753&q=80") center;
+    background-size: cover;
+    position: static;
+    background-attachment: fixed;
 }
 
 /* ----------------------------------------
@@ -588,7 +669,7 @@ section.techniques ul li::marker {
 /* ----------------------------------------
 # Acuarela - page
 ---------------------------------------- */
-#main-encaustica{
+#main-acuarela{
     height: 30rem;
     background: linear-gradient(rgba(2, 0, 9, 0.95), rgba(91, 94, 44, 0.7)), url("https://mott.pe/noticias/wp-content/uploads/2018/01/Portada.jpg") center;
     background-size: cover;
@@ -623,4 +704,68 @@ section.techniques ul li::marker {
     background: linear-gradient(rgba(2, 0, 9, 0.95), rgba(91, 94, 44, 0.7)), url("https://i.pinimg.com/564x/e2/54/24/e25424b4b77ef111c39c2034182093f6.jpg") center ;
     background-size: cover;
     position: relative;
+}
+
+/* ----------------------------------------
+# Footer
+---------------------------------------- */
+footer {
+  background-color:#3d414e;
+  padding: 1rem 10rem;
+  font-size:15px;
+  line-height:24px;
+  color:#c4c4c4;
+}
+footer.site-footer hr{
+  border-top-color: #fff;
+  opacity: 0.5;
+}
+footer.site-footer h6 {
+  color:#fff;
+  font-size: 1.2rem;
+  text-transform:uppercase;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+footer.site-footer a {
+  color:#979797;
+}
+footer.site-footer a:hover {
+  color:#2eaab3;
+  text-decoration:none;
+}
+ul.footer-links {
+  padding-left:0;
+  list-style:none
+}
+ul.footer-links li {
+  display: block;
+  line-height: 2rem;
+}
+
+/* ----------------------------------------
+# Form Footer
+---------------------------------------- */
+form.form-footer{
+    margin-top: 20px;
+}
+form.form-footer input.form-control {
+    width: 100%;
+    height: 2.5rem;
+    background-color: #979797;
+    border-radius: 0.8rem;
+    padding-left: 1rem;
+    outline: none;
+}
+form.form-footer input.form-control:focus,
+form.form-footer textarea.form-control:focus {
+    background: #fff;
+}
+form.form-footer textarea.form-control {
+    width: 100%;
+    height: 100px;
+    border-radius: 0.8rem;
+    background-color:#979797;
+    padding: 1rem;
+    outline: none;
 }
