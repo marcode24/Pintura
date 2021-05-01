@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 *:target {
-    background: yellow;
+    background: hsla(60, 100%, 50%, 0.4);
 }
 :root{
     --greenColor1: #25F96A;
@@ -27,7 +27,7 @@ section[class~="bg"]{
     background-size: cover;
 }
 section .content .container p::first-letter {
-    color: red;
+    color: hsl(0,100%,50%);
     font-size: 150%;
 }
 a.btn-primary {
@@ -49,7 +49,7 @@ input[class='btn-success'] {
     font-weight: 600;
     font-size: 1rem;
     color: #fff;
-    background-color: rgba(6, 180, 0, 0.7);
+    background-color: green;
     border-radius: 0.8rem;
     box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 10%);
     border: 0px;
@@ -62,7 +62,7 @@ a.btn-primary:hover{
 }
 input[class='btn-success']:hover {
     color: rgb(0, 0, 0, 0.7);
-    background-color: rgb(6, 180, 0);
+    background-color: greenyellow;
     cursor: pointer;
 }
 .text-center {
@@ -241,7 +241,10 @@ table caption {
     margin-bottom: 1rem;
 }
 th, td {
-    border: 0.2rem solid #000;
+    border: 0.2rem solid;
+    border-color: #000;
+    border-style: dotted;
+
 }
 table thead tr th[class] {
     font-size: 1.5rem;
@@ -288,6 +291,7 @@ div[class|='cards'] {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    flex-flow: wrap;
 }
 .card {
     margin: 0.5rem;
@@ -640,10 +644,13 @@ section.techniques ul li::marker {
 ---------------------------------------- */
 #main-pintura {
     height: 100vh;
-    background: linear-gradient(rgba(2, 0, 9, 0.55), rgba(2, 0, 9, 0.55)), url("https://images.unsplash.com/photo-1580089056071-11f31b94fefe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=753&q=80") center;
     background-size: cover;
     position: static;
     background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(2, 0, 9, 0.4), rgba(2, 0, 9, 0.4)), url('https://images.unsplash.com/photo-1580089056071-11f31b94fefe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=753&q=80');
 }
 
 /* ----------------------------------------
